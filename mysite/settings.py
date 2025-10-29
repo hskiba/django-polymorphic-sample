@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += (
     'polymorphic',
+    'factor',
 )
 
 MIDDLEWARE = [

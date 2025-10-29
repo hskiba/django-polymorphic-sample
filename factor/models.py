@@ -9,4 +9,4 @@ class FX(Base):
     from_currency = models.CharField(max_length=3)
 
 class Volatility(Base):
-    base_factor = models.ForeignKey(Base, on_delete=models.CASCADE)
+    base_factor = models.OneToOneField(Base, on_delete=models.CASCADE, related_name="volatility_factor")

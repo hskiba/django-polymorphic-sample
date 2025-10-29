@@ -6,7 +6,7 @@ from .models import Base, FX, Volatility, Currency
 class BaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Base
-        fields = "__all__"
+        exclude = ["polymorphic_ctype"]
 
 
 class CurrencySerializer(serializers.ModelSerializer):
@@ -18,13 +18,13 @@ class CurrencySerializer(serializers.ModelSerializer):
 class FXSerializer(serializers.ModelSerializer):
     class Meta:
         model = FX
-        fields = "__all__"
+        exclude = ["polymorphic_ctype"]
 
 
 class VolatilitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Volatility
-        fields = "__all__"
+        exclude = ["polymorphic_ctype"]
 
 
 class BasePolymorphicSerializer(PolymorphicSerializer):
